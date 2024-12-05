@@ -28,9 +28,7 @@ def aggregate(updates):
 
 
 # Part 1
-part1_updates = filter(is_ordered, updates)
-print(aggregate(part1_updates))
+print(aggregate(filter(is_ordered, updates)))
 
 # Part 2
-part2_updates = map(order, filter(is_not_ordered, updates))
-print(aggregate(part2_updates))
+print(aggregate(map(order, filter(is_not_ordered, updates))))
