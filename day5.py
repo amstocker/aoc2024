@@ -18,7 +18,7 @@ def is_ordered(update):
 def is_not_ordered(update):
     return not is_ordered(update)
     
-def make_ordered(update):
+def order(update):
     for i, j in unordered_pairs(update):
         update[i], update[j] = update[j], update[i]
     return update
@@ -32,5 +32,5 @@ part1_updates = filter(is_ordered, updates)
 print(aggregate(part1_updates))
 
 # Part 2
-part2_updates = map(make_ordered, filter(is_not_ordered, updates))
+part2_updates = map(order, filter(is_not_ordered, updates))
 print(aggregate(part2_updates))
