@@ -17,18 +17,16 @@ def evaluations(numbers, concat=False):
             if concat:
                 yield int(str(intermediate) + str(numbers[0]))
 
-def calibration(concat=False):
-    sum = 0
+def calibrations(concat=False):
     for (n, numbers) in data:
         for m in evaluations(numbers, concat):
             if n == m:
-                sum += n
+                yield n
                 break
-    return sum
 
 
 # Part 1
-print(calibration())
+print(sum(calibrations()))
 
 # Part 2
-print(calibration(concat=True))
+print(sum(calibrations(concat=True)))
