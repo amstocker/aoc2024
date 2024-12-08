@@ -1,7 +1,7 @@
 data = list(map(
     lambda line: (
         int(line[0]),
-        list(reversed(list(map(int, line[1].split()))))
+        [int(n) for n in reversed(line[1].split())]
     ),
     [line.split(':') for line in open("day7.txt").read().splitlines()]
 ))
